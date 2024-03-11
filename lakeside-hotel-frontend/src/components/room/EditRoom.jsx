@@ -1,10 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
 import { getRoomById, updateRoom } from '../utils/ApiFunctions'
 import { Link, useParams } from 'react-router-dom'
 
 const EditRoom = () => {
   const [room, setRoom] = useState({
-    photo: null,
+    photo: "",
     roomType: "",
     roomPrice: ""
   })
@@ -22,7 +23,7 @@ const EditRoom = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    setRoom({ ...roomPrice, [name]: value })
+    setRoom({ ...room, [name]: value })
   }
 
   useEffect(() => {
@@ -61,6 +62,7 @@ const EditRoom = () => {
   return (
     <>
       <section className='container, mt-5 mb-5'>
+      <h3 className="text-center mb-5 mt-5">Edit Room</h3>
         <div className='row justify-content-center'>
           <div className='col-md-8 col-lg-6'>
             <h2 className='mt-5 mb-2 text-align-center'>Update Room</h2>
